@@ -1,0 +1,33 @@
+
+<div class="header">
+  <span>Food Rotator</span>
+</div>
+
+<div *ngIf="selectedFoodElement" class="content">
+  <div class="card-container">
+    <mat-card class="card" [ngClass]="rotating ? 'card-animation' : ''">
+      <mat-card-header>
+        <mat-card-title>{{selectedFoodElement.name}}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="card-content">
+        <div>
+          <div><b>Cost</b>: {{selectedFoodElement.cost}}</div>
+          <div><b>Effort</b>: {{selectedFoodElement.effort}}</div>
+          <div><b>Protein</b>: {{selectedFoodCalcProtein }}</div>
+        </div>
+        <div>
+          <div class="additional-information">Additional Information</div>
+          <div>{{selectedFoodElement.additionalInfo  || ' - '}}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="footer">
+  <input matInput placeholder="grams" [formControl]="selectedGramsCtrl" type="number" class="gram-input">
+  <button mat-fab aria-label="Rotate" class="rotate-button" [ngClass]="rotating ? 'button-animation':''" (click)="onRotate()">
+    <mat-icon>refresh</mat-icon>
+  </button>
+</div>

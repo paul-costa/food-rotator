@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "food-rotator"
+  },
+  "targets": {
+    "food-rotator": {
+      "hosting": {
+        "food-rotator": [
+          "food-rotator"
+        ]
+      }
+    }
+  }
+}

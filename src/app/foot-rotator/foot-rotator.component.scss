@@ -1,0 +1,123 @@
+.header, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  font-size: 36pt;
+  background-color: rgb(50, 50, 50);
+  color: rgb(200,200,200);
+}
+
+.header {
+  font-family: 'figtree', 'arial', sans-serif;
+  text-decoration: line-through;
+}
+
+.content {
+  height: calc(100% - 192px);
+  background-image: url('../../assets/images/wallpaper2.jpg');
+  background-size: cover;
+
+  .card-container {
+    padding-top: 48px;
+
+    .card {
+      margin: 24px auto;
+      max-width: 400px;
+
+      @media (max-width: 500px) {
+        margin: 24px;
+      }
+
+      .card-content {
+        display: flex;
+
+
+        div {
+          flex: 1
+        }
+
+        :first-child {
+          line-height: 34px;
+
+        }
+
+        .additional-information {
+          font-weight: bold;
+          line-height: initial;
+          margin-bottom: 6px;
+        }
+      }
+
+      animation: fadeIn 500ms linear;
+
+      &.card-animation {
+        animation: slidedown 1s linear;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slidedown  {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  gap: 48px;
+
+  @media (max-width: 900px) {
+    gap: 36px;
+  }
+
+    @media (max-width: 700px) {
+    gap: 24px;
+  }
+
+  @media (max-width: 500px) {
+    gap: 12px;
+  }
+
+  .gram-input {
+    padding: 16px;
+    font-size: 18px;
+  }
+}
+.rotate-button {
+
+  &.button-animation {
+    animation: swirly 500ms linear;
+  }
+
+  mat-icon {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes swirly {
+  from{
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
